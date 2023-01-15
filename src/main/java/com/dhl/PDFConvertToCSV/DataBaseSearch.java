@@ -71,7 +71,7 @@ public class DataBaseSearch {
 
                 cdmsData.setGrossWeightCDMS(new BigDecimal(m_totalKgWeight));
 
-                cdmsData.setFreightCDMS(new BigDecimal(String.format("%.2f", Double.parseDouble(m_freightFeeDcc.toString()))));
+                cdmsData.setFreightCDMS(new BigDecimal(String.format("%.2f", Double.parseDouble(m_freightFeeDcc.toString()))).multiply(new BigDecimal("1.06")).setScale(2, BigDecimal.ROUND_HALF_UP));
 
                 cdmsData.setOriginalValueCDMS(new BigDecimal(m_customsValue));
 
